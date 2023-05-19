@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Button from './Button';
 
-function App() {
+const App = () => {
+  const handleButtonClick1 = () => {
+    alert('I am button 1 clicked');
+  };
+
+  const handleButtonClick2 = () => {
+    alert('I am button 2 clicked');
+  };
+
+  const buttonStyle1 = {
+    color: 'white',
+    background: 'red',
+    margin: '10px',
+    padding: '5px',
+    borderRadius: '5px'
+  };
+
+  const buttonStyle2 = {
+    color: 'white',
+    background: 'blue',
+    margin: '10px',
+    padding: '5px',
+    borderRadius: '5px'
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Button
+        buttonText="Button 1"
+        buttonStyle={buttonStyle1}
+        onClick={handleButtonClick1}
+      />
+      <Button
+        buttonText="Button 2"
+        buttonStyle={buttonStyle2}
+        onClick={handleButtonClick2}
+      />
     </div>
   );
-}
+};
 
 export default App;
